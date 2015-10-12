@@ -236,6 +236,11 @@ module Telegram
       @connection.communicate(['send_video', chat, path], &callback)
     end
 
+    def add_contact(phone, first_name, last_name, &callback)
+      assert!
+      @connection.communicate(['add_contact', phone, first_name, last_name], &callback)
+    end
+
     # Download an attachment from a message
     #
     # @param [type] type The type of an attachment (:photo, :video, :audio)
